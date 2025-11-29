@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagong Lote Elementary school | Malabon IV District</title>
+    <link rel="stylesheet" href="/wddFinalProject/styles/mal4.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w&callback=initMap"
+        defer></script>
+    <script src="script/schoolInfo.js" defer></script>
+    <script src="script/map.js" defer></script>
+    <script src="script/nat.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-box">
+            <img src="/wddFinalProject/images/district4.jpg" alt="District Logo" class="logo" />
+            <h1 class="title">Malabon IV Elementary Schools</h1>
+        </div>
+        <section class="hero-school">
+            <img src="/wddFinalProject/images/bagonglotees.jpg" alt="School Logo" class="school-logo-large" />
+            <h2 class="school-name">Bagong Lote Elementary School</h2>
+        </section>
+        <section class="content-section">
+            <div class="card">
+                <h3>School Information</h3>
+                <p><strong>School Name:</strong> <span id="schoolName"></span></p>
+                <p><strong>Address:</strong> <span id="address"></span></p>
+                <p><strong>Contact No.:</strong> <span id="contact"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Facebook Page:</strong> <a id="facebook" target="_blank">Visit Page</a></p>
+                <p><strong>Website:</strong> <a id="Website" target="_blank">Visit Website</a></p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="card">
+                <h3>Natinal Achievement Test Results (SY 2024-2025)</h3>
+                <ul class="nat-list">
+                    <li><strong>Mathematics:</strong> <span id="natMath">%</li>
+                    <li><strong>English:</strong> <span id="natMath">%</li>
+                    <li><strong>Science:</strong> <span id="natMath">%</li>
+                    <li><strong>Filipino:</strong> <span id="natMath">%</li>
+                    <li><strong>Araling Panlipunan:</strong> <span id="natMath">%</li>
+                </ul>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="card">
+                <h3>Location Map</h3>
+                <div id="map" class="map-box"></div>
+                <a id="directionLink" class="btn-direction" target="blank">Get Directions</a>
+            </div>
+        </section>
+        <footer class="footer">
+            <p>&copy;2025 District IV Elementary Schools . All Rights Reserved</p>
+            <p>Contact: gina.ong@deped.gov.ph</p>
+        </footer>
+</body>
+
+
+</html>
