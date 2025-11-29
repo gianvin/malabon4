@@ -184,11 +184,96 @@ img {
 }
 
 /* --  Small Screens --- */
-.header .logo {
-    width: 48px;
-    height: 48px;
+@media (max-width: 900px) {
+    .header .logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .header .title {
+        font-size: 18px;
+    }
+
+    .hero .hero-img {
+        height: 200px;
+    }
+
+    .school-logos .school-logo {
+        width: 88px;
+        height: 88px;
+    }
+
+    #map {
+        height: 420px;
+    }
+
 }
 
-.header .title {
-    font-size: 18px;
+/* -- Mobile --- */
+@media (max-width: 600px) {
+    .header .logo-box {
+        gap: 10px;
+        padding: 6px 0;
+    }
+
+    .header .title {
+        font-size: 16px;
+    }
+
+    .her0 {
+        margin: 18 px auto;
+    }
+
+    .hero .hero-img {
+        height: 160px;
+        border-radius: 10px;
+    }
+
+    .school-logos {
+        justify-content: space-between;
+        gap: 10 px;
+    }
+
+    .school-logos .school-logo {
+        width: 70px;
+        height: 70px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .map-section {
+        padding-bottom: 28px;
+    }
+
+    #map {
+        height: 320px;
+    }
+
+    .footer p {
+        font-size: 13px;
+    }
+
+}
+
+/* -- Accesibility contrast helpers --- */
+.btn-primary {
+    display: inline-block;
+    background: var(--sunshine-yellow);
+    color: var(--dark-charcoal);
+    padding: 10px 16px;
+    border-radius: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 171, 0, 0.12);
+    transition: background .12s ease, transform .12s ease;
+}
+
+.btn-primary:hover {
+    background: var(--deep-amber);
+    transform: translateY(-2px);
+}
+
+/* Google Maps Container won't overflow on small screens */
+.gm-style>div {
+    max-width: 100% !important;
 }
