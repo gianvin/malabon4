@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    /*--Primary Colors--- */
+    --sunshine-yellow: #FFD600;
+    --tangerine-orange: #FF6D00;
+    --deep-amber: #FFAB00;
+
+    /*--Secondary Colors--- */
+    --warm-coral: #FF8A65;
+    --soft-apricot: #FFE0B2;
+    --neutral-gray: #F5F5F5;
+    --dark-charcoal: #333333;
+
+    /*--Accent Colors--- */
+    --sky-blue: #4FC357;
+    --forest-green: #66BB6A;
+
+    /*--Layout--- */
+    --max-width: 1200px;
+    --container-padding: 20px;
+    --border-radius: 10px;
+    --card-padding: 18px;
+}
+
+/*--Global Reset & base--- */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, var(--neutral-gray), #fff);
+    color: var(--dark-charcoal);
+    font-family: 'Roboto' system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smmothing: antialiased;
+}
+
+a {
+    color: var(--sky-blue);
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*--Page Container--- */
+.header,
+.hero,
+.schools-section,
+.map-section,
+.footer {
+    width: 100%;
+    display: block;
+}
+
+/* -- Header --- */
+.header {
+    background: linear-gradient(90deg, var(--tangerine-orange), var(--deep-amber));
+    color: #fff;
+    padding: 14px var(--container-padding);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.header .logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px;
+}
+
+.header .title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: 0.6px;
+}
+
+/* -- Hero --- */
+.hero {
+    max-width: var(--max-width);
+    margin: 28px auto;
+    padding: 0 var(--container-padding);
+}
+
+.her0 .hero-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+/* -- Schools Logos section --- */
+.schools-section {
+    max-width: var(--max-width);
+    margin: 28px auto;
+    padding: 0 var(--container-padding) 8px;
+}
+
+.schools-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0 0 12px;
+    color: var(--dark-charcoal);
+}
+
+.school-logos {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.school-logos .school-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: var(--soft-apricot);
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform .18 ease, box-shadow .18 ease;
+    cursor: pointer;
+}
+
+.school-logos .school-logo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* -- Map section --- */
+.map-section {
+    max-width: var(--max-width);
+    margin: 28px auto;
+    padding: 0 var(--conatiner-padding) 40px;
+}
+
+.map-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 0 0 12px;
+}
+
+#map {
+    width: 100%;
+    height: 520px;
+    /* --desktop default ---*/
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    background: linear-gradient(180deg, var(--sunshine-yellow), #fff);
+}
+
+/* -- footer --- */
+.footer {
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 18px var(--container-padding);
+}
+
+.footer p {
+    margin: 6px;
+    color: var(--dark-charcoal);
+    font-size: 14 px;
+    text-align: center;
+}
+
+/* -- Responsiveness --- */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* --  Small Screens --- */
+.header .logo {
+    width: 48px;
+    height: 48px;
+}
+
+.header .title {
+    font-size: 18px;
+}
