@@ -1,14 +1,14 @@
 {
     "bagong_lote": {
         "name": "Bagong Lote Elementary School",
-        "address": "Bagong Lote Potrero Malabon City",
-        "contact": "8245 66 45",
-        "email": "potreroes@deped.gov.ph",
-        "facebook": "https://facebook.com/potreroes",
-        "website": "https://potreroes@malabon.gov.ph",
+        "address": "81 Bagong Lote St., Potrero Malabon City",
+        "contact": "+63289616739",
+        "email": "bagonglotees.malaboncity@deped.gov.ph",
+        "facebook": "https://facebook.com/BagongLoteES",
+        "website": "https://bagonglotees.depedmalaboncity.ph",
         "location": {
-            "lat": 14.6681,
-            "lng": 120.9740
+            "lat": 14.67027,
+            "lng": 120.99798
         },
         "nat": {
             "math": 36.17,
@@ -26,8 +26,8 @@
         "facebook": "https://facebook.com/gssmes",
         "website": "https://gssmes@malabon.gov.ph",
         "location": {
-            "lat": 14.6681,
-            "lng": 120.9740
+            "lat": 14.67691,
+            "lng": 120.97074
         },
         "nat": {
             "math": 42.02,
@@ -45,8 +45,8 @@
         "facebook": "https://facebook.com/pot1es",
         "website": "https://pot1es@malabon.gov.ph",
         "location": {
-            "lat": 14.6681,
-            "lng": 120.9740
+            "lat": 14.66549,
+            "lng": 120.97832
         },
         "nat": {
             "math": 37.04,
@@ -58,14 +58,14 @@
     },
     "potEs": {
         "name": "Potrero Elementary School ",
-        "address": "Pinagtipunan Circle Potrero Malabon City",
-        "contact": "8245 66 45",
+        "address": "4 Pinagtipunan Circle Potrero Malabon City",
+        "contact": "+63270017305",
         "email": "potes@deped.gov.ph",
-        "facebook": "https://facebook.com/potes",
-        "website": "https://potes@malabon.gov.ph",
+        "facebook": "https://facebook.com/potreroelementaryschool",
+        "website": "https://potreroes.malaboncity@deped.gov.ph",
         "location": {
-            "lat": 14.6681,
-            "lng": 120.9740
+            "lat": 14.66332,
+            "lng": 120.98450
         },
         "nat": {
             "math": 46.72,
@@ -77,14 +77,14 @@
     },
     "tinajeros": {
         "name": "Tinajeros Elementary School ",
-        "address": "Tinajeros Malabon City",
+        "address": "Oreta, B. Tinajeros Malabon City",
         "contact": "8245 66 45",
         "email": "tines@deped.gov.ph",
-        "facebook": "https://facebook.com/tines",
-        "website": "https:/tines@malabon.gov.ph",
+        "facebook": "https://facebook.com/tinajeroses",
+        "website": "https:/tinajeroses.malaboncity@deped.gov.ph",
         "location": {
-            "lat": 14.6681,
-            "lng": 120.9740
+            "lat": 14.67146,
+            "lng": 120.97064
         },
         "nat": {
             "math": 40.75,
