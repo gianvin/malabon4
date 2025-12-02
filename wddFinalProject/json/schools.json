@@ -39,14 +39,14 @@
     },
     "pot1": {
         "name": "Potrero Elementary School I",
-        "address": "University Hills Subdivision Potrero Malabon City",
-        "contact": "8245 66 45",
-        "email": "pot1es@deped.gov.ph",
-        "facebook": "https://facebook.com/pot1es",
+        "address": "Dunwoody St. UE Tech Subd., Potrero Malabon City City",
+        "contact": "+6329906368",
+        "email": "potreroes1.malaboncity@deped.gov.ph",
+        "facebook": "https://facebook.com/potrerES1",
         "website": "https://pot1es@malabon.gov.ph",
         "location": {
-            "lat": 14.66549,
-            "lng": 120.97832
+            "lat": 14.66504,
+            "lng": 120.97813
         },
         "nat": {
             "math": 37.04,
