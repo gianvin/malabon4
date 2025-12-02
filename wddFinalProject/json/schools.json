@@ -20,11 +20,11 @@
     },
     "gssmes": {
         "name": "Guillermo S. Sanchez Memorial Elementary School",
-        "address": "Sisa Extension St. La Trinidad Subdivision Tinajeros Malabon City",
+        "address": "Sisa Extension, La Trinidad Subdivision Tinajeros Malabon City",
         "contact": "8245 66 45",
-        "email": "gssmes@deped.gov.ph",
-        "facebook": "https://facebook.com/gssmes",
-        "website": "https://gssmes@malabon.gov.ph",
+        "email": "guillermosanchezms.malaboncity@deped.gov.ph",
+        "facebook": "https://facebook.com/guillermos.sanchezmemorialelementaryschool",
+        "website": "https://guillermosanchezms.depedmalaboncity.ph",
         "location": {
             "lat": 14.67691,
             "lng": 120.97074
@@ -77,11 +77,11 @@
     },
     "tinajeros": {
         "name": "Tinajeros Elementary School ",
-        "address": "Oreta, B. Tinajeros Malabon City",
-        "contact": "8245 66 45",
-        "email": "tines@deped.gov.ph",
-        "facebook": "https://facebook.com/tinajeroses",
-        "website": "https:/tinajeroses.malaboncity@deped.gov.ph",
+        "address": "B. Rivera St. Tinajeros Malabon City",
+        "contact": "+63287840300",
+        "email": "tinajeroses.malaboncity@deped.gov.ph",
+        "facebook": "https://facebook.com/TinajerosES",
+        "website": "https://tinajeroses.malaboncity@deped.gov.ph",
         "location": {
             "lat": 14.67146,
             "lng": 120.97064
