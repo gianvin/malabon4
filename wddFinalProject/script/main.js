@@ -1,4 +1,4 @@
-import { qs, qsa, fetchJSON } from "../util.mjs";
+import { qs, qsa, fetchJSON } from "../script/utils.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
 
