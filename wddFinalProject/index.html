@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malabon IV Elementary Schools</title>
     <link rel="stylesheet" href="styles/mal4.css" />
-    <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w&callback=initMap"
-        defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?keyAIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w"></script>
     <script src="/wddFinalProject/script/map.js" defer></script>
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo-box">
+    <header class="main-header">
+        <div class="logo-container">
             <img src="images/district4.jpg" alt="District Logo" class="logo" />
             <h1 class="title">Malabon IV Elementary Schools</h1>
         </div>
@@ -22,8 +21,12 @@
         <img src="images/districtBanner.png" alt="District Banner" class="hero-img" />
     </section>
     <section class="schools-section">
-        <h2>District IV Elementary Schools</h2>
-        <div class="school-logos">
+        <h2>Mission</h2>
+        <P>
+            "Basic Quality Education for All"
+        </P>
+        <div class="card">
+            <h2>District IV Elementary Schools</h2>
             <a href="/wddFinalProject/School Pages/bles.html?id=bagong_lote">
                 <img src="images/bagonglotees.jpg" alt="Bagong Lote Elementary School" class="school-logo" />
                 <p>Bagong Lote </p>
@@ -45,6 +48,11 @@
                 <img src="images/tinajeroses.jpg" alt="Tinajeros Elementary School" class="school-logo" />
                 <p>Tinajeros</p>
             </a>
+        </div>
+
+        <div class="card">
+            <h2>District Map</h2>
+            <div id="map"></div>
         </div>
     </section>
     <footer class="footer">

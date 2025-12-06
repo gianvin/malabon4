@@ -14,49 +14,47 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo-box">
-            <img src="/wddFinalProject/images/district4.jpg" alt="District Logo" class="logo" />
-            <h1 class="title">Malabon IV Elementary Schools</h1>
-        </div>
-        <section class="hero-school">
-            <img src="/wddFinalProject/images/tes_entrance.png" alt="School Logo" class="school-logo-large" />
-            <h2 class="school-name">Tinajeros Elementary School</h2>
-        </section>
-        <section class="content-section">
-            <div class="card">
-                <h3>School Information</h3>
-                <p><strong>School Name:</strong> <span id="schoolName"></span></p>
-                <p><strong>Address:</strong> <span id="address"></span></p>
-                <p><strong>Contact No.:</strong> <span id="contact"></span></p>
-                <p><strong>Email:</strong> <span id="email"></span></p>
-                <p><strong>Facebook Page:</strong> <a id="facebook" target="_blank">Visit Page</a></p>
-                <p><strong>Website:</strong> <a id="Website" target="_blank">Visit Website</a></p>
-            </div>
-        </section>
-        <section class="content-section">
-            <div class="card">
-                <h3>Natinal Achievement Test Results (SY 2024-2025)</h3>
-                <ul class="nat-list">
-                    <li><strong>Mathematics:</strong> <span id="natMath">%</li>
-                    <li><strong>English:</strong> <span id="natMath">%</li>
-                    <li><strong>Science:</strong> <span id="natMath">%</li>
-                    <li><strong>Filipino:</strong> <span id="natMath">%</li>
-                    <li><strong>Araling Panlipunan:</strong> <span id="natMath">%</li>
-                </ul>
-            </div>
-        </section>
-        <section class="content-section">
-            <div class="card">
-                <h3>Location Map</h3>
-                <div id="map" class="map-box"></div>
-                <a id="directionLink" class="btn-direction" target="blank">Get Directions</a>
-            </div>
-        </section>
-        <footer class="footer">
-            <p>&copy;2025 District IV Elementary Schools . All Rights Reserved</p>
-            <p>Contact: gina.ong@deped.gov.ph</p>
-        </footer>
+    <header class="school-header">
+        <img src="/wddFinalProject/images/tinajeroses.jpg" alt="District Logo" class="logo" />
+        <h1 class="title">Tinajeros Elementary School</h1>
+    </header>
+    <section class="school-section">
+        <h2 class="section-title">School Information</h2>
+        <ul class="school-details-list" id="school-details">
+            <li><strong>School Name:</strong> <span id="schoolName"></span></li>
+            <li><strong>Address:</strong> <span id="address"></span></li>
+            <li><strong>Contact No.:</strong> <span id="contact"></span></li>
+            <li><strong>Email:</strong> <span id="email"></span></li>
+            <li><strong>Facebook Page:</strong> <span id="facebook" target="_blank">Visit Page</span></li>
+            <li><strong>Website:</strong> <span id="Website" target="_blank">Visit Website</span></li>
+        </ul>
+
+    </section>
+    <section class="school-section">
+        <h2 class="section-title">Natinal Achievement Test Results (SY 2024-2025)</h2>
+        <div class="nat-grid">
+            <p>English:<span id="nat-math"></span>%</p>
+            <p>Mathematics:<span id="nat-math"></span>%</p>
+            <p>Science:<span id="nat-math"></span>%</p>
+            <p>Filipino:<span id="nat-math"></span>%</p>
+            <p>Aralin Panlipunan:<span id="nat-math"></span>%</p>
+    </section>
+    <section class="school-section">
+        <h2 class="section-title">Directions</h2>
+        <button id="directions-btn" class="directions-btn">
+            Get Directions (Google Maps)
+        </button>
+    </section>
+    <section class="school-section">
+        <h2 class="section-title">Location Map</h2>
+        <div id="map-preview" class="map-preview"></div>
+        <a id="directionLink" class="btn-direction" target="blank">Get Directions</a>
+
+    </section>
+    <footer class="footer">
+        <p>&copy;2025 District IV Elementary Schools . All Rights Reserved</p>
+        <p>Contact: gina.ong@deped.gov.ph</p>
+    </footer>
 </body>
 
 
