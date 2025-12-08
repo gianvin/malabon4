@@ -1,25 +1,37 @@
-import { qs, fetchJSON } from "../script/utils.mjs";
+import { qs, loadJSON } from "./utils.mjs";
 
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    const schoolId = document.body.getAttribute("data-school");
-    const data = await fetchJSON("../json/schools.json");
+    const schoolKey = document.body.dataset.school;
 
-    if (!data[schoolId]) {
-        console.error("school not found", schoolId);
-        return
+    if (!schoolKey) {
+        console.error("No data-school attribute found");
+        return;
     }
 
-    const s = data[schoolId];
+    try {
+        const data = await loadJSON("/wddFinalProject/json/schools.json");
+        const school = data[schoolKey];
 
-    // Fill school information
+        if (!school) {
+            console.error("School not found:i", schoolKey);
+            return;
 
-    qs("#schoolName").textContent = s.name;
-    qs("#address").textContent = s.address;
-    qs("#contact").textContent = s.contact
-    qs("#email").textContent = s.email;
-    qs("#facebook").innerHTML = `<a href="${s.facebook}" target="_blank">Visit Page></a>`;
-    qs("#website").innerHTML = `<a href="${s.website}" target="_blank">Visit Website></a>`;
+        }
+        // Fill school information
 
-    window.schoolData = s;
+        qs("#schoolName").textContent = school.name;
+        qs("#address").textContent = school.address;
+        qs("#contact").textContent = school.contact
+        qs("#email").textContent = school.email;
+        qs("#facebook").innerHTML = `<a href="${school.facebook}" target="_blank">Visit Page></a>`;
+        qs("#website").innerHTML = `<a href="${school.website}" target="_blank">Visit Website></a>`;
+
+
+
+    } catch (err) {
+        console.error("Error loading school info:", err);
+    }
+
+
 });

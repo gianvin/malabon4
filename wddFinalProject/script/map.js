@@ -1,24 +1,29 @@
-import { qs } from "../script/utils.mjs";
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const mapBox = qs("#map-preview");
-
-    const s = window.schoolData;
-    if (!s) return;
-
-    const lat = s.location.lat;
-    const lng = s.location.lng;
+import { loadJSON, qs } from "./utils.mjs"
 
 
-    mapBox.innerHTML =
+document.addEventListener("DOMContentLoaded", async () => {
 
-        <iframe
-            width="100%"
-            height="300"
-            style="border:0"
-            loading="lazy"
-            allowFullScreen
-            src="https://www.google.com/maps/embed/v1/view?AIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w&center=${lat}.${lng}&zoom=17">
-        </iframe>;
+    const schoolKey = document.body.dataset.school;
+    if (!schoolKey) return;
+
+    const data = await loadJSON("/json/schools.json");
+    const school = data[schoolKey];
+
+    window.initMap = function () {
+        map = new google.maps.Map(qs("#map-preview"), {
+            center: { lat: school.lat, lang: school.lng },
+            map,
+            title: school.schoolName
+        });
+    };
+    loadMapScript();
 });
+
+function loadMapScript() {
+    const apiKey = "AIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w";
+
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${AIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w}&callback=initMap`;
+    script.async = true;
+    document.head.appendChild(script);
+}

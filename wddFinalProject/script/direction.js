@@ -1,17 +1,24 @@
-import { qs, directionLink } from "../script/utils.mjs";
+import { loadJSON, qs } from "./utils.mjs";
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    const s = window.schoolData;
-    if (!s) return;
 
-    const lat = s.location.lat;
-    const lng = s.location.lng;
+document.addEventListener("DOMContentLoaded", async () => {
 
-    const btn = qs("#directions-btn");
+    const schoolKey = document.body.dataset.school;
+    if (!schoolKey) return;
+
+    const data = await loadJSON("/json/schools.json");
+    const school = data[schoolKey];
+
+    const directionBtn = qs("#directions-btn");
     const link = qs("#directionLink");
 
-    link.href = this.URL;
-    btn.addEventListener("click", () => window.open(this.URL, "_blank"));
+    const mapsLink = `https://www.google.com/maps/dir/?AIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w=1&destination=${school.lat}.${school.lng}`;
 
+    directionBtn.addEventListener("click", () => {
+        window.open(mapsLink, "_blank");
+    });
+
+
+    link.href = mapsLink
 });
