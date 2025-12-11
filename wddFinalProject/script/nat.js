@@ -1,12 +1,12 @@
-import { loadJSON } from "./utils.mjs";
+import { qs, loadJSON } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     const schoolKey = document.body.dataset.school;
-    if (!sschool) return;
+    if (!schoolKey) return;
 
     try {
-        const data = await loadJSON("../json/schools.json");
+        const data = await loadJSON("/wddFinalProject/json/schools.json");
         const nat = data[schoolKey].nat;
 
         if (!nat) return;

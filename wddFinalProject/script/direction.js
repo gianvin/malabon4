@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const schoolKey = document.body.dataset.school;
     if (!schoolKey) return;
 
-    const data = await loadJSON("/json/schools.json");
+    const data = await loadJSON("/wddFinalProject/json/schools.json");
     const school = data[schoolKey];
 
     const directionBtn = qs("#directions-btn");
