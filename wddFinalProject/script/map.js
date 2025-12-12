@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function loadMapScript() {
-    const apiKey = "AIzaSyAjfvPOPuSu54Qp23yxhr319FzQe1oXD3w";
+    const apiKey = "AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA";
 
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA}&callback=initMap`;
