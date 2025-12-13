@@ -2,7 +2,7 @@
 import { loadJSON } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
-    constMapEl = document.getElementById("map");
+    const mapEl = document.getElementById("map");
     if (!mapEl) return;
 
 
@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             const marker = new google.maps.marker.AdvancedMarkerElement({
                 map: map,
                 position: school.location,
-                title: school.name
+                title: school.name,
+                mapId: "2eb80bd29610602dae4c70a9",
 
             });
-            if (key === lastSchoolKey) {
+            if (Key === lastSchoolKey) {
                 map.setCenter(school.location);
                 map.setZoom(16);
                 marker.setAnimation(google.maps.Animation.BOUNCE);
