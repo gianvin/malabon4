@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const schoolKey = document.body.dataset.school;
     if (!schoolKey) return;
 
+    localStorage.setItem("lastVisitedSchool", schoolKey);
     try {
         const data = await loadJSON("schools.json");
         const school = data[schoolKey];

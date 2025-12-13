@@ -1,47 +1,38 @@
 
 import { loadJSON } from "./utils.mjs";
 
-document.addEventListener("DOMContentLoaded", initMain);
+document.addEventListener("DOMContentLoaded", async () => {
+    constMapEl = document.getElementById("map");
+    if (!mapEl) return;
 
-async function initMain() {
-    console.log("Initializing homepage...");
-
-    const districtMapContainer = document.getElementById("distict-map");
-
-    if (!districtMapContainer) {
-        console.log("Not on homepage - district map not loaded.");
-        return;
-    }
 
     try {
         const schools = await loadJSON("schools.json");
-        initDistrictMap(schools);
+        const lastSchoolKey = localStorage.getItem("lastVisitedSchool");
 
-    } catch (error) {
-        console.error("Error loading district map:", err);
+        const map = new google.maps.Map(mapEl, {
+            zoom: 13,
+            center: { lat: 14.33, lang: 120.94 }
+        });
+        Object.entries(schools).forEach(([Key, school]) => {
+            const marker = new google.maps.marker.AdvancedMarkerElement({
+                map: map,
+                position: school.location,
+                title: school.name
+
+            });
+            if (key === lastSchoolKey) {
+                map.setCenter(school.location);
+                map.setZoom(16);
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+
+                setTimeout(() => {
+                    marker.setAnimation(null);
+                }, 3000);
+            }
+        });
+    } catch (err) {
+        console.error("Homepage map error:", err);
     }
 
-}
-
-function initDistrictMap(schools) {
-    console.log("District map data", schools);
-
-    const map = new google.maps.Map(
-        document.getElementById("district-map"),
-        {
-            zoom: 13,
-            center: { lat: 14.33, lng: 120.94 },
-        }
-    );
-
-    Object.values(schools).forEach((school) => {
-        new google.maps.Marker({
-            position: {
-                lat: school.location.lat,
-                lng: school.location.lng
-            },
-            map,
-            title: school.schoolName
-        });
-    });
-}
+});

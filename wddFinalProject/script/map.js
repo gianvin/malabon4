@@ -17,13 +17,15 @@ async function loadDistrictMap() {
     // Select map container using qs()
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
-        center: { lat: 14.6700, lng: 120.9800 }
+        center: { lat: 14.6700, lng: 120.9800 },
+        mapId: "2eb80bd29610602dae4c70a9",
     });
 
     //Markers for each school
     Object.values(schools).forEach(school => {
-        new google.maps.Marker({
-            position: school.location, maps,
+        new google.maps.marker.AdvancedMarkerElement({
+            map: map,
+            position: school.location,
             title: school.name
 
         });
@@ -36,12 +38,13 @@ async function loadSchoolMap() {
 
     const map = new google.maps.Map(document.getElementById("map-preview"), {
         zoom: 15,
-        center: school.location
+        center: school.location,
+        mapId: "2eb80bd29610602dae4c70a9",
     });
 
-    new google.maps.Marker({
+    new google.maps.marker.AdvancedMarkerElement({
+        map: map,
         position: school.location,
-        map,
         title: school.name
     });
 }

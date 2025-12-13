@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
         const link = document.querySelector("#directionLink");
-        if (link) link.href = urlrl;
+        if (link) link.href = url;
     } catch (err) {
         console.error("Directions error:", err);
     }
