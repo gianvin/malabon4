@@ -1,37 +1,35 @@
-import { qs, loadJSON } from "./utils.mjs";
+import { loadJSON } from "./utils.mjs";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     const schoolKey = document.body.dataset.school;
-
-    if (!schoolKey) {
-        console.error("No data-school attribute found");
-        return;
-    }
+    if (!schoolKey) return;
 
     try {
-        const data = await loadJSON("/wddFinalProject/json/schools.json");
+        const data = await loadJSON("schools.json");
         const school = data[schoolKey];
 
         if (!school) {
-            console.error("School not found:i", schoolKey);
             return;
 
         }
         // Fill school information
 
-        qs("#schoolName").textContent = school.name;
-        qs("#address").textContent = school.address;
-        qs("#contact").textContent = school.contact
-        qs("#email").textContent = school.email;
-        qs("#facebook").innerHTML = `<a href="${school.facebook}" target="_blank">Visit Page></a>`;
-        qs("#website").innerHTML = `<a href="${school.website}" target="_blank">Visit Website></a>`;
+        document.querySelector("#schoolName").textContent = school.name;
+        document.querySelector("#address").textContent = school.address;
+        document.querySelector("#contact").textContent = school.contact;
+        document.querySelector("#email").textContent = school.email;
 
+        const fb = document.querySelector("#facebook");
+        fb.textContent = "Visit Page";
+        fb.href = school.facebook;
 
+        const website = document.querySelector("#website");
+        website.textContent = "Visit Website";
+        website.href = school.website;
 
     } catch (err) {
-        console.error("Error loading school info:", err);
+        console.error("School info error:", err)
     }
-
 
 });

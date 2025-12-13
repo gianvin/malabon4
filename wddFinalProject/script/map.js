@@ -1,29 +1,47 @@
-import { loadJSON, qs } from "./utils.mjs"
-
+import { loadJSON } from "../script/utils.mjs"
 
 document.addEventListener("DOMContentLoaded", async () => {
+    if (document.getElementById("map")) {
+        loadDistrictMap();
+    }
 
-    const schoolKey = document.body.dataset.school;
-    if (!schoolKey) return;
-
-    const data = await loadJSON("/wddFinalProject/json/schools.json");
-    const school = data[schoolKey];
-
-    window.initMap = function () {
-        map = new google.maps.Map(qs("#map-preview"), {
-            center: { lat: school.lat, lang: school.lng },
-            map,
-            title: school.schoolName
-        });
-    };
-    loadMapScript();
+    if (document.getElementById("map-preview")) {
+        loadSchoolMap();
+    }
 });
 
-function loadMapScript() {
-    const apiKey = "AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA";
+async function loadDistrictMap() {
+    // Load School Data
+    const schools = await loadJSON("schools.json");
 
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA}&callback=initMap`;
-    script.async = true;
-    document.head.appendChild(script);
+    // Select map container using qs()
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: { lat: 14.6700, lng: 120.9800 }
+    });
+
+    //Markers for each school
+    Object.values(schools).forEach(school => {
+        new google.maps.Marker({
+            position: school.location, maps,
+            title: school.name
+
+        });
+    });
+}
+async function loadSchoolMap() {
+    const schoolKey = document.body.dataset.school;
+    const data = await loadJSON("schools.json");
+    const school = data[schoolKey];
+
+    const map = new google.maps.Map(document.getElementById("map-preview"), {
+        zoom: 15,
+        center: school.location
+    });
+
+    new google.maps.Marker({
+        position: school.location,
+        map,
+        title: school.name
+    });
 }

@@ -1,43 +1,27 @@
-import { loadJSON, qs } from "./utils.mjs";
+import { loadJSON } from "./utils.mjs";
 
-async function setupDirections() {
+document.addEventListener("DOMContentLoaded", async () => {
+    const schoolKey = document.body.dataset.school;
+    if (!schoolKey) return;
+
     try {
-        const schoolKey = document.body.dataset.school;
-        if (!schoolKey) {
-            console.warn("direction.js: no data-school on body");
-            return;
-        }
-        const data = await loadJSON("/wddFinalProject/json/schools.json");
-        const school = data[schoolKey];
-        if (!school || !school.location) {
-            console.warn("direction.js: location not found for", schoolKey);
-            return;
-        }
-        const lat = school.location.lat;
-        const lng = school.locationlng;
+        const data = await loadJSON("schools.json");
 
-        const mapsUrl = `https://www.google.com/maps/dir/?api=AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA=1&destination=${lat}.${lng}`;
-        const btn = qs("#directions-btn");
-        const link = qs("#directionLink");
+        const { lat, lng } = data[schoolKey].location;
+        const url = `https://www.google.com/maps/dir/?api=AIzaSyD5Ahio13PE7q4n12uVvfD6Q8OQi5u5oPA=1&destination=${lat}.${lng}`;
 
-        if (link) {
-            link.href = mapsUrl;
-            link.target = "_blank";
-        }
-
-        if (btn) {
-            btn.addEventListener("click", function () {
-                window.open(mapsUrl, "_blank");
+        document.querySelector("#drection-btn")
+            ?.addEventListener("click", () => {
+                window.open(url, "_blank");
             });
-        } else {
-            console.warn("direction.js: #directions-btn not found");
-        }
-        console.log("direction.js: directions ready for", schoolKey);
+
+        const link = document.querySelector("#directionLink");
+        if (link) link.href = urlrl;
     } catch (err) {
-        console.error("direction.js error:", err);
+        console.error("Directions error:", err);
     }
-}
-document.addEventListener("DOMContentLoaded", setupDirections);
+});
+
 
 
 
