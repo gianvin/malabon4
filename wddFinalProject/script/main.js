@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const map = new google.maps.Map(mapEl, {
             zoom: 13,
-            center: { lat: 14.33, lang: 120.94 }
+            center: { lat: 14.33, lng: 120.94 }
         });
         Object.entries(schools).forEach(([Key, school]) => {
             const marker = new google.maps.marker.AdvancedMarkerElement({
